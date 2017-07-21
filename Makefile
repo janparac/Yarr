@@ -150,8 +150,8 @@ par: synthesize par.tcl
 
 bitstream.tcl:
 		echo $(TCL_OPEN) >> $@
-		#~~~~~~~~~added file to precompiler~~~~
-		echo set_property STEPS.WRITE_BITSTREAM.TCL.PRE ./bitstreamPRE.tcl [get_runs impl_1] >> $@
+		#~~~~~~~~~added file to precompiler PATH REQUIRED~~~~
+		echo set_property STEPS.WRITE_BITSTREAM.TCL.PRE <abs-path-to>/bitstreamPRE.tcl [get_runs impl_1] >> $@
 		echo launch_runs impl_1 -to_step write_bitstream >> $@
 		echo wait_on_run impl_1 >> $@
 		echo $(TCL_CLOSE) >> $@
